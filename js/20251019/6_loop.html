@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //for 迴圈
+        let j = 1;
+        for (let i = 1; i <= 5; i++) {
+            console.log('a', i);
+        }
+        console.log('end');
+        let sumA = 0;//1+2+3+4+5
+        for (let i = 1; i < 6; i++) {
+            sumA += i;
+        }
+        let sumB = 1;//1+2+3+4+5
+        for (let i = 1; i < 6; i++) {
+            sumB += i;
+        }
+        console.log('sum=', sumA, sumB);
+
+        console.clear();
+        let i =0;
+        while(i < 10) {
+            console.log('hello');
+            if(i % 2 === 0) console.log('i is even:', i);
+            i++;
+        }
+
+        console.clear();
+        let O =10
+        do {
+            console.log('hi', O);
+            O-=5
+        } while (O > 0);
+
+        console.clear();
+
+    
+        }
+    </script>
+</body>
+
+</html>

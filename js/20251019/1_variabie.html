@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <hi1>hello world</h1>
+        <script>
+            var a = 10;
+            let b = 20;
+            const c = 30;//宣告常數不變
+
+            let number = 100;
+
+
+            let isActive = true;//駱駝式命名
+            let user_Name = "John Doe";//底線命名法
+
+            console.log("var a:", a);
+            console.log("let b:", b);
+            console.log("const c:", c);
+
+
+            //var 舊的變數宣告方式
+            //let 與 const ES6 新的變數宣告方式
+
+
+            //全域變數:不特意宣告，直接賦予產生一個全域(所有程式碼都可以讀寫)變數
+            //------------------
+            e = 600;//直接賦予一個宣告的變數，會自動變成全域變數
+            e = 700;//隨時都可以改變，不建議使用
+            console.log(" e:", e);
+            //------------------
+            //作用域
+            console.clear();
+
+            let gVar = "I am global";//全域變數
+            {  //區域變數{}區域範圍
+                let gVar = "I am local";
+                let lVar = "I am local variable";//區域變數
+                console.log("區域內讀取的全域變數 gVar=", gVar);
+                console.log("區域內讀取的區域變數 lVar=", lVar);
+
+                console.log("區域外讀取的全域變數 gVar=", gVar);
+                console.log("區域外讀取的區域變數 lVar=", lVar);//錯誤，區域外無法讀取區域變數
+
+            }
+        </script>
+</body>
+
+</html>

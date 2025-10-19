@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const age = 17;
+        //因為單行敘述可以省略大括號{}
+        if (age >= 18) console.log("限制級");
+        else if (age >= 13) console.log("輔導級");
+        else if (age >= 6) console.log("保護級");
+        else console.log("普遍級");
+
+        console.log('結束');
+        //單行特性可以省略{}
+        //-----------------
+        //if(true) console.log(''yes');
+        //else console.log('no');
+
+        //上面可以改為三元設計
+        //-----------------
+        //true ? console.log('yes') : console.log('no');
+
+        //三元+字串模板
+        //-----------------
+        //console.log(true ? 'yes' : 'no');
+        //console.log(`i sdid:${true ? 'yes': 'no'}`);
+
+
+        //多重條件判斷
+        //-----------------
+        //if (age >= 18) {
+        //    console.log("限制級");
+        //    } else {
+        //  if (age >= 13) {
+        //    console.log("輔導級");
+        //    } else {
+        //  if (age >= 6) {
+        //    console.log("保護級");
+        //    } else {
+        //      console.log("普遍級");
+        //     }
+        //  }
+        // }
+
+        //練習
+        console.clear();
+
+        let score = 95;
+        let grade;
+
+     // if (score >= 90) grade = 'A';
+     // else if (score >= 80) grade = 'B';
+    // else if (score >= 70) grade = 'C';
+     // else if (score >= 60) grade = 'D';
+     // else if (score >= 0) grade = 'F';
+     // console.log(`分數:${score}等級:${grade}`);
+
+     // console.clear();
+
+     // let year = 2000;
+     // let isLeap;
+     // if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) isLeap = true;
+     // else isLeap = false;
+     // console.log(`${year}是閏年嗎?${isLeap}`);
+
+     // console.clear();
+
+      //let height = 170;//身高(cm)
+      //let weight = 51;//體重(kg)
+      //let bmi = weight / ((height / 100) ** 2);
+
+      //let status;
+     //if (bmi < 18.5) status = '過輕';
+       //lse if (bmi < 24.9) status = '正常';
+       //lse if (bmi < 29.9) status = '過重';
+       //lse if (bmi < 30) status = '肥胖';
+       //onsole.log(`你的BMI值為${bmi.toFixed(2)}, 體重狀況為:${status}`);//
+
+
+        console.clear();
+        //老師解答//練習1
+        score = 85;
+
+        let level;
+        if (typeof score === 'number' && 0 <= score && score <= 100) {
+
+            if (score >= 90) level = 'A';
+            else if (80 <= score) level = 'B';
+            else if (80 <= score) level = 'C'
+            else if (80 <= score) level = 'D'
+            else level = 'F';
+            console.log(`分數 $(score)的等級 ${level}`);
+        }
+        else console.log('分數異常，不是數字或者不在0~100之間無法計算');
+
+        //if(score>=90 && score <=100) level ='A';
+        //練習2
+        //-----------------
+        const year = 2400;
+        console.log(`${year} 年是閨年 :  ${(year % 4 === 0) && (year % 100 !== 0) || (year % 400 === 0)}`);
+
+        //練習3
+        //-----------------
+        const Height =170;
+        const Weight =70;
+        const Bmi = weigt / (Heigh /100) ** 2;
+        let status ='肥胖';
+
+        switch (true) {
+            case (bmi < 18.5):
+                status = '過輕';
+                break;
+            case (bmi < 24.9):
+                status = '正常';
+                break;
+            case (bmi < 29.9):
+                status = '過重';
+                break;
+        }
+        console.log(`你的BMI值為${bmi.toFixed(2)}, 體重狀況為:${status}`);
+
+    </script>
+
+</body>
+
+</html>
