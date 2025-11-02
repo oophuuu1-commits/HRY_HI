@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const a1 = 1;
+        const a2 = 2;
+        const a3 = 3;
+        const ary1 = [false, 'loki', 3];
+        const ary2 = [];
+        const ary3 = new Array();
+        const ary4 = new Array(3);
+        //ary2===ary3結構不一樣所以不等於是false
+        //-----------------------------
+        const bry1 = [1, 2, 3];
+        const bry2 = [1, 2, 3];
+        const bry3 = bry1;
+        //arry是一種特別的物件，此寫法將記憶體參考位置指給 bry3, 因此如果詢問bry3 === bry1 會 true
+        //--------------------------
+        const cry1 = ["香蕉", "蘋果", "橘子", 145, 130, 80];
+        let cry2 = ["aa", "bb ", "cc", 145, 130, 80];
+        //const可以修改單一不能整個改
+        /*to trying
+        cry1[1]= '蝦米' //success ,因為 cry1 是記憶體位置不變，修改的是記憶體位置內容的另一個導向位置，因此可以修改內容
+         */
+        //-----------------
+
+        const dry1 = ["香蕉", "蘋果", "橘子", 145, 130, 80];
+
+        for (let i = 0; i < dry1.length; i++) {
+            console.log(dry1[i]);
+        }
+        // dry1.forEach(myprint);
+
+        console.clear();
+        //arry.forEach(elment => {});
+        // function myprint(value,index){
+        //   console.log(value,index)
+
+        //匿名函式
+        //dyr1.function (function(value){
+        // console.log(value)
+        //箭頭函式
+        //dry1.forEach((vai, idx) => {
+        //  console.log(`在陣列 dry1 的第 ${idx}得值是${val});
+
+        //for (const item of dry1) {
+        // console.log(item);
+
+        console.clear();
+        //----------新增刪除陣列(push,pop,shift,unshift)-----------
+        //----------------------
+        const ery1 = ["香蕉", "蘋果", "橘子", 145, 130, 80];
+        const num80 = ery1.pop();//刪除陣列最後一個值，並回傳該值
+        ery1.push("水蜜桃");//在陣列新增一個值
+        const apple = ery1.shift();//刪除陣列第一個值，並回傳該值
+        ery1.unshift("荔枝");//在陣列頭端新增一個值
+
+        console.log(ery1);  // ['荔枝', '蘋果', '橘子', 145, 130, '水蜜桃']
+
+        const ansIs3 = ery1.indexOf(145);  //return index number
+        const hasBanana = ery1.includes("荔枝"); //return boolean
+        const aryTostr = ery1.toLocaleString(); //return string 
+        const aryTostrwithJoin = ery1.join(" , ") //return string join separstor
+
+
+        ery1.splice(3,2,"梨子", "葡萄柚");
+
+        console.log(ery1); // ['荔枝', '蘋果', '橘子', '梨子', '葡萄柚', '水蜜桃']
+
+
+        const aryFruitHas1 = ery1.slice(1,2);//['蘋果']
+        const aryFruitHas3 = ery1.slice(2,5);//['橘子', '梨子', '葡萄柚']
+        const aryFruitHas4 = ery1.slice(2); //['橘子', '梨子', '葡萄柚', '水蜜桃']
+  
+        const aryFruitConcat = aryFruitHas3.concat(aryFruitHas4, aryFruitHas1);
+        //['橘子', '梨子', '葡萄柚', '橘子', '梨子', '葡萄柚', '水蜜桃', '蘋果']
+
+
+
+        console.clear();
+        //----------------------------
+
+        const fry1 = ['aaa', ery1, true];
+        const fry2 = [aryFruitHas1, aryFruitHas3, aryFruitHas4];
+
+        const fry3 = [['蘋果'],['橘子', '梨子'],['葡萄柚', '水蜜桃' ]];
+        const watermelon = fry3[2][1];//'水蜜桃'
+        fry3[2].splice(1, 0, '鳳梨');
+        //fry3.splice(1, 0, "鳳梨");
+        
+        console.log(fry3)
+
+
+
+        
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const name = "loki";
+        console.log(`使用者名稱 : ${name}`);
+
+
+
+        function showWelcome() {   //宣告 Fn Browser 每次執行會先讀取 FN 宣告 才會開始跑 script 代碼 ，因此部會受宣告影響
+            console.log("歡迎來到我們的網站！");
+            console.log("今天是美好的一天！");
+            console.log("=============================");
+        }
+
+        console.clear();
+
+        //showWelcome(); //執行 FN
+        function show2(name) {
+            console.log(`Hallo! ${name}`);
+            console.log("=============================");
+        }
+
+        show2('Loki');
+        show2('Kitty');
+        show2();
+
+        console.clear();
+
+        function sum(a = null, b = null) {
+            if (typeof a === "number" && typeof b === "number")
+                console.log(`計算 ${a} +${b} 的結果是: ${a + b}`);
+            else
+                console.log('參數不足，無法計算')
+        }
+
+        sum(10, 20);
+        sum(10, 20, 30); //多餘的參數部會被使用
+        sum(0, 20);
+
+        console.clear();
+
+        function calTotal(ary) {
+            let sum = 0;
+            for (const num of ary) {//sum +=num; 
+                //if(typeof num !== 'number') continue;//脫離數字
+                if (typeof num !== 'number') return NaN;//直接回傳NaN
+                sum += num;
+            };
+            console.log('done');
+
+            return sum; //將結果回傳給呼叫處
+        }
+        const myTotal = calTotal([10, 20, 30, 40, 50]);
+        console.log(`計算結果是 : ${myTotal}`);
+
+
+        console.clear();
+        //-----------箭頭函式-------(可以省略)
+
+        //const subArrow = (a, b = 0) => {
+        //   console.log(`計算 ${a} +${b} 的結果是: ${a + b}`); 
+        //};
+        // console.log(subArrow(10, 8));
+        // const subArrow = (a, b = 0) => console.log(`${a - b}`);
+        //subArrow(10, 8);
+        //const subArrow = (a, b = 0) =>{
+        //return a - b
+        //};
+        //const subArrow = (a, b = 0) => a - b //箭頭已有包含reyurn,不用打
+        //console.log(subArrow(10, 8));
+        //const square = (n) => {
+        //  return n ** 2;
+        // }
+        //const square = n => n **2;
+        //console.log(square(3));
+
+        const sayHi = () => console.log(123);
+
+        console.clear();
+        //--------------匿名函式----------------------
+
+        const addsum = function (a, b) { //這個變數 addsum 裡面放著一個匿名函式，可逞為這個內容為函式表達式//不能省略
+            return a + b;
+            //console.log(a + b);
+        };
+        const sayyes = function (V) {
+            console.log('yes', V)
+        };
+
+        sayyes('H');
+
+        console.log('123');
+        //立即執行函式IIFE
+        (function (V) {
+            console.log('yes', V)
+        })('H');
+        (function () {
+            console.log('yes')
+        })();
+        (() => console.log('NO'))();
+
+        console.clear();
+
+        //-------------Fn應用在陣列的prototype----------------------------
+
+        let nameAry = ['Loki', 'Max', 'July', 'Jack'];
+
+        //function printEl(V, i) {
+        //  console.log(V, i);
+        //}
+
+        //num.forEach(printEl);
+        //const tampEn = function (v ,i) {
+        //  console.log(v, i); 
+        //};
+        // nameAry.forEach((v , i) => console.log(v, i));
+        //nameAry.forEach(v => console.log(V));
+        nameAry.forEach((V, i,ary ) => console.log(V, i , ary));
+
+        console.clear();
+
+        const fnAdd = (a ,b) => a + b;
+        const fnSub = (a ,b) => a + b;
+        const calc = (a ,b ,fn) => console.log(fn(a , b));
+        // function (a ,b ,fn) {
+          //  console.log(fn(a , b));
+        
+        calc(10, 5 ,fnAdd);
+        calc(10, 5 ,fnSub);
+
+    </script>
+</body>
+
+</html>

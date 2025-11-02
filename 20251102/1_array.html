@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const std1 = {
+            name: 'loki',
+            score: {
+                En: 60,
+                mt: 99,
+            },
+            isMale: true,
+            hobbies: ['reading', 'gaming', 'coding'],
+            address: {
+                city: 'taipei',
+                zipCode: '10101',
+                country: 'taiwan',
+                street: 'tsipei road'
+            },
+
+            greet: function () {
+                console.log('hello')
+            }
+        }
+
+        const getName1 = std1.name;
+        const getName2 = std1['name'];
+        const getName3 = std1['hobbies'][1];
+        const getName4 = std1.hobbies[1];
+
+        const keyName = 'age'
+
+        std1.name = 'max'
+        std1.keyName = 50; //這裡的keyname不是變數(value 為 age)，是object key
+
+        std1['age'] = 30;  //find key (age) by string it's success
+        std1[keyName] = 40;  ////find key (age) by Variable it's success
+
+
+        //  const cityUC = std1.address.city?.toUpperCase();
+        //console.log(cityUC ? `WELCOME TO ${cityUC}` : `WELCOME`);
+
+        //let cityUC = std1.address.city?.toUpperCase() ?? 'TAIWAN';
+        //console.log(cityUC ? `WELCOME TO ${cityUC}` : `WELCOME`);
+        // if(!cityUC) cityUC = 'TAIWAN'
+        //如果||只要可以是為false的都會往後跑(讀取default)
+        //如果??只有 nullep 跟undefined 會往後跑(讀取default)
+        console.log(`WELCOME TO ${std1.address.city?.toUpperCase() ?? 'TAIWAN'}`);
+        //  const student2 = {
+        //  name: 'max',
+        // scoreEn:60,
+        // scoremt:99,
+
+        console.clear();
+
+
+        //-------------------
+        const std2 = {
+            name: 'max',
+            age: 22,
+            major: "資訊工程",
+            grade: "大三"
+
+        } ;
+
+        for (const key in std2) {
+            
+            console.log(`key: ${key}, Value: ${std2[key]}`);
+
+        }
+
+        console.clear();
+
+        Array.isArray(std2); //false
+        Object.keys(std2); // ['name', 'age', 'major', 'grade']
+        Object.values(std2); //['max', 22, '資訊工程', '大三']
+        Object.entries(std2);
+        "age" in std2; //true
+        
+        if("age" in std2) { console.log('key => age in std2') }
+        
+
+
+
+
+    </script>
+</body>
+
+</html>
