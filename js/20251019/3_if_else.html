@@ -10,13 +10,7 @@
 <body>
     <script>
         const age = 17;
-        //因為單行敘述可以省略大括號{}
-        if (age >= 18) console.log("限制級");
-        else if (age >= 13) console.log("輔導級");
-        else if (age >= 6) console.log("保護級");
-        else console.log("普遍級");
-
-        console.log('結束');
+        
         //單行特性可以省略{}
         //-----------------
         //if(true) console.log(''yes');
@@ -29,24 +23,32 @@
         //三元+字串模板
         //-----------------
         //console.log(true ? 'yes' : 'no');
-        //console.log(`i sdid:${true ? 'yes': 'no'}`);
+        //console.log(`i said: ${true ? 'yes': 'no'}`);
 
 
         //多重條件判斷
         //-----------------
         //if (age >= 18) {
         //    console.log("限制級");
-        //    } else {
+        // } else {
         //  if (age >= 13) {
         //    console.log("輔導級");
-        //    } else {
-        //  if (age >= 6) {
-        //    console.log("保護級");
+        //  } else {
+        //    if (age >= 6) {
+        //      console.log("保護級");
         //    } else {
         //      console.log("普遍級");
         //     }
         //  }
         // }
+        //因為單行敘述可以省略大括號{}
+        if (age >= 18) console.log("限制級");
+        else if (age >= 13) console.log("輔導級");
+        else if (age >= 6) console.log("保護級");
+        else console.log("普遍級");
+
+        console.log('結束');
+
 
         //練習
         console.clear();

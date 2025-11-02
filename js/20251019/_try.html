@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //question 1
+    //-----------------
+    const score = 1000;
+    let level;
+
+    if(typeof score === 'number' && 0<= score && score <=100) {
+
+       if(90 <= score) level = 'A';
+       else if (80 <= score) level = 'B';
+       else if (70 <= score) level = 'C';
+       else if (60 <= score) level = 'D';
+       else level = 'F';
+       console.log(`分數:${score},等級${level}`);
+
+    }
+    else console.log('分數異常，不是數字或者不介於0~100之間無法計算');
+
+    console.clear();
+    //switch 寫法
+    const score2 = 95;
+    let level2;
+
+    if(typeof score2 === 'number' && score2 >=0 && score2 <=100) {
+        switch (true) {
+            case (score2 >=90):
+                level2 ='A';
+                break;
+            case (score2 >=80):
+                level2 = 'B';
+                break;
+            case (score2 >=70):
+                level2 = 'C';
+                break;
+            case (score2 >=60):
+                level2 = 'D';
+                break;
+            default:
+                level2 = 'F';
+            
+        }
+        console.log(`分數: ${score2},等級:${level2}`);
+     } else {
+        console.log('分數異常，不是數字或者不在0~100之間無法計算');
+     }
+     
+       console.clear();
+
+    //巢狀三元運算子
+    const score3 = 60;
+    const level3 = (typeof score3 === 'number' && score3 >=0 && score3 <=100)
+        ? (score3 >=90 ?'A'
+            : score3 >= 80 ? 'B'
+            : score3 >= 70 ? 'C'
+            : score3 >= 60 ? 'D'
+            : 'F')
+        : '分數異常，不是數字或者不在0~100之間無法計算';
+        console.log(`分數: ${score3},等級: ${level3}`);
+        
+
+    </script>
+</body>
+</html>

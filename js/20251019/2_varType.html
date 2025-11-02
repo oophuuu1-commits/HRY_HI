@@ -18,6 +18,7 @@
 
         console.clear();
 
+
         const grade = 95;
         const level =
             (grade >= 90)
@@ -36,7 +37,25 @@
         console.log('-------------------');
         //跳脫字元
         console.log("老闆說:\"今年一定加薪!\"我很疑惑");
-        console.log(路徑
+        console.log("路徑為 C:\\Users");
+
+        console.clear();
+        const Grade = 70;
+        const level1 =
+            (Grade >= 90)
+                ?
+                (Grade >= 95)
+                    ? 'A++'
+                    : 'A+'
+                : (Grade >= 80)
+                    ? 'A'
+                    : '不是A';
+        //const level = (grade >=80) ? 'A' : '不是A';
+        console.log(level1);
+        console.log(`小明的成績是${(Grade >= 90) ? (Grade >= 95) ? 'A++' : 'A+' : (Grade >= 80) ? 'A' : '不是A'}`);
+
+
+
     </script>
 
 </body>
