@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        const ary1 = ['A', 'B', 'C', 'D', 'E'];
+        const ary2 = ['甲', '乙'];
+        ary.includes('A');//true
+        ary.includes('F');//false
+
+        function fnEachConsole(arr) {
+            arr.forEach(function (val, idx) {
+                console.log(`this index ${idx} is ${val}`);
+            });
+
+            //const  fnEachConsole = (val, idx) => {
+            //   console.log(`this indx ${idx} is ${val}`);
+            //fnEachConsole(0, 'A');
+            //fnEachConsole(1, 'B');
+            //fnEachConsole(2, 'C');
+            //fnEachConsole(3, 'D');
+            ary1.forEach(fnEachConsole);
+            ary2.forEach(fnEachConsole);
+            console.clear();
+
+            ary1.forEach(function (va1) {
+                console.log(va1);
+            });
+            ary1.forEach(va1 => console.log(va1));
+
+            console.clear();
+
+            //---------------map-----------------
+            const ary3 = ary1.map(function (oldval) {
+                if (oldval === 'B' || oldval === 'D') return oldval;
+                return `name is ${oldval}`;//返回 
+                console.log(oldval);
+            });
+            //------------過濾----------------
+            const aryScope = [80, 55, 60, 70, 99]
+            const aryPass = aryPass.fjlter(function (val) {
+                return val => 60;
+            });
+
+
+            //--------------------尋找,地一個符合條件的(true)返回該值----------------
+            const findFirstUnPass = ary.find(function (val) {
+                return val <= 60;
+            });
+            //------------------some:任一直有符合返回該值-----------------------
+            const hasUnPsss = aryScope.some(function (val) {
+                return val < 60;
+            });
+            //--------------every:全不符合才會回傳值----------------
+            const allPass = aryScope.every(function (val) {
+                return val >= 60;
+            });
+
+            //--------------reduce:累加器-------------------------
+            let total = 0;
+            for (let i = 0; i < aryScope.length; i++) {
+                total += aryScope[i];
+            }
+            const avg = total / aryScope.length;
+
+            //let total = 0;
+            //aryScope.forEach(val => total += val);
+            //const avg = total / aryScope.length;
+
+            aryScope.reduce(function (acc, cur) {
+                console.log(acc, cur);
+                return acc + cur;
+            }, 0);
+            const avg = total / aryScope.length;
+
+    </script>
+</body>
+
+</html>

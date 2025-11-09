@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let name = 'loki';//全域變數
+
+        function testScope() {
+            let name = 'Max';//區域變數
+            let age = 18;
+            console.log(name);
+        }
+
+        //  console.log(name, age);
+
+        if (true) {
+            let name = 'kitty';
+            console.log('if scope', name);
+        }
+
+        console.clear();
+
+        //------------------閉包------------------
+        function outerFunction() {
+            const message = "Hello from outer function";
+
+            function innerFunction() {
+                console.log(message); // 存取外部變數
+            }
+            return innerFunction;
+        }
+
+        const myFunction = outerFunction();
+        myFunction(); // 輸出：Hello from outer function
+        //閉包,就是讓一涵式可以記住並存取當時他定義時的外部作用域，即使這個外部函式執行完畢不存在，但該內部函式還是可以對外部函式的作用域存取(已經記住記憶體位置)
+
+        //證明每次呼叫 fn 都是新的資源與記憶體分配
+        function creatA() {
+            let a = 0;
+            a++;
+            console.log(a);
+        }
+        //creatA(); //1, 新的記憶體分配
+        {
+            let a = 0;
+            a++;
+            console.log(a);
+            name = 3;
+        }
+
+        console.clear();
+
+        //----------------------------------
+        function createCounter() {
+            let count = 0; // createCounter的區域變數， 對inc coumt2.來說式外部變數
+
+            function inc() {
+                count++;
+                console.log(`計數：${count}`);
+            }
+
+            function getCount() {
+                return count;
+            }
+
+            return { inc, getCount };
+        }
+        const counter = createCounter();
+        counter.inc(); // 計數：1
+        counter.inc(); // 計數：2
+        console.log(counter.getCount()); // 
+
+        console.clear();
+        //-----------------this當下環境的指令--------------------------
+
+        // console.log(this); //Window
+        this.console.log(123);
+        window.console.log(123);
+
+        console.clear();
+
+
+        function thisWord() {
+            console.log(this).word; // 印出 this 物件內的 word 變數
+        }
+
+        word = 'A';
+
+        obj = {
+            word: 'B',
+            ask: thisWord,
+            second: {
+                word: 'C',
+                ask: thisWord
+            }
+        }
+
+        const person = {
+            name: '小明',
+            age: 25,
+            sayHello() {
+                console.log(`你好，我是 ${this.name}，今年 ${this.age} 歲`);
+            },
+            birthday: function () {
+                this.age++;
+                console.log(`生日快樂！現在 ${this.age} 歲了`);
+            },
+            checkThis: function () {
+                console.log(this);//這裡的this是一種方便，當我們呼叫checkThis時，this會指向當前物件
+            },
+            arrowThis: () => {
+                console.log(this);//箭頭函式不支援this
+            }
+        };
+        console.log(Person);
+        Person.checkThis();
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const myset = new Set();//set 可以幫你管理部重複的值
+        myset.add(50);
+        myset.add(10);
+        myset.add(5);
+        myset.add(5);
+        myset.add(50);
+
+        myset.delete(5);
+
+        myset.has(50);
+        myset.has(1000);
+
+        myset.forEach(val => console.log(val));
+
+        //const coinAry = Arry.from(myset);
+
+        const dataAry = [5, 15, 5, 10, 20, 40, 50, 20, 5, 100, 50];
+        /*
+        const ans = new Set(dataAry);
+        const newDataAry = Array.from(ans);
+        const sortDataAry = newDataAry.sort((a, b) => a- b);
+        */
+        console.log(Array.from(new Set(dataAry)).sort((a, b) => a - b));
+
+        console.clear();
+
+        //-------------------------------------------
+        let map = new Map();
+        //mymap.set('name', '小明');
+        //mymap.set(123, '數字 key');
+        //let objKey = { id: 1 };
+        //map.set(objKey, '物件 key');
+
+        console.clear();
+
+        //--------------math(random)0 ~ 0.999999--------------
+        //const rand1= Math.random();
+        //const rand2= Math.random();
+        //const rand3= Math.random();
+
+        const rand0to9dot9 = Math.random() * 10;
+        const rand0to9 = Math.floor(rand0to9dot9);
+        const r1to10 = Math.floor(Math.random() * 10) + 1;
+        //const r13to42 =???
+        //const r0to29 + 13
+
+        Math.random() * 30;
+
+        const r0to29 = Math.floor(Math.random() * 30) + 13;
+
+        function rand(min, max) {
+            return Math.floor(Math.random() * max - min + 1) + min;
+        }
+        console.log(rand(5, 7));
+
+        console.clear();
+        //---------------------------------------
+        function generateLotto() {
+            const lotto = [null, null, null, null, null, null];
+            const result = [];
+
+            lotto.forEach(() => {
+                let num;
+                do {
+                    num = Math.floor(Math.random() * 46) + 1; // 1~46
+                } while (result.includes(num));
+                result.push(num);
+            });
+
+            return result.sort((a, b) => a - b); // 排序
+        }
+
+        console.log(generateLotto());
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const ary1 = ['A', 'B', 'C'];
+
+        //const ary2 = ary1;
+        //ary2.push('D', 'E');
+        //const ary2=[];
+        //ary1.forEach(val => ary2.push(val));
+        //ary2.push('D', 'E')
+
+        //ary2= ['A' ,'B' ,'C']+['D', 'E']
+        //ary2 =ary1.concat(['D', 'E']);
+        //ary2=ary1.slice();
+
+        //ary2.push('D', 'E')
+        //ary2 = Array.from(ary1);
+
+        // ary2 = [...ary1, 'D', 'E'];
+        //const aryDE = ['D', 'E'];
+
+        // const ary3 = ary1.concat(aryDE);//合併為新陣列
+
+        const obj1 = { name: 'loki', age: 18 };
+        //const obj2 = { ...obj1 };
+        const obj2 = { ...obj1, name: 'max' };
+
+
+
+
+        const obj3 = {
+            name: 'loki',
+            scope: {
+                en: 100,
+                mt: 99
+            }
+        }
+
+        // const obj4 = {...obj3};淺拷貝的關係，第二層物件沒有被展開為新物件，所以他們的scope指向同一物件
+        const obj4 = {
+            ...obj3,
+            scope: { ...obj3.scope }
+        };
+
+        const nestAary1 = ['A', ['b', 'c']];
+        //const nestAary2=[...nestAary1];
+
+        const [fat, sec] = nestAary1;//解構賦值
+        const nestAary2 = [
+            fat,
+            [...sec]
+        ];
+
+        const ary5 = [10, 20, 30];
+        const [x, , Z] = ary5;
+        const [y, , w] = ary5;
+
+        let [m, n, o = null, p = null] = [1, 2, 3];
+
+        const [aa, bb, ...rest] = [100, 200, 300, 400, 500];
+
+        const person = { name: '小明', age: 18, city: '台北', job: '學生' };
+
+        const { name, age, ...restobj } = person;
+
+        const { city } = restobj;
+
+        const { city: address } = restobj;
+
+        const { job = '老師', gender = '未知' } = person;
+
+        //----------------------------------------------------------
+        function user1(name, age) {
+            console.log(name, age);
+        }
+        function user2(obj) {
+            console.log(obj.name, obj.age);
+        }
+        const useInfo = { name: 'loki', age: 18 };
+        user2(useInfo);
+
+        function user3({ name, age }) {
+            console.log(name, age);
+        }
+
+        function user4({ name, age, job = '未知' }) {
+            console.log(name, ageㄝ, job);
+        }
+
+        function user5(name, age, job = '未知') {
+            console.log(name, age, job);
+        }
+
+        console.clear();
+        //--------------------------------------------------
+        // -
+    </script>
+</body>
+
+</html>
