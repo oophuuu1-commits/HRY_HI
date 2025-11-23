@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="myTitle" class='h1class' title="這次標題" data-loki="這是自訂屬性">主標題</h1>
+    <a href="https://www.google.com" target="_blank" id="myLink" title="google">google</a>
+
+    <!--<h2>副標題</h2>
+    <div id="container">
+        <p class="text">第一段文字</p>
+        <p class="text">第二段文字</p>
+        <button id="btn">點擊我</button>
+    </div>
+    <hr>
+    <input type="text" name="myTitle" value="輸入框">--->
+    <hr>
+    <input type="text" id="input1" value="原始值">
+    <hr>
+    <div class="container">hllo world</div>
+    <script>
+        (() => {
+
+            //透過 dom(js) property屬性來取得元素的屬性值
+            const elH1 = document.querySelector('#myTitle');
+            console.log(elH1.id);
+            console.log(elH1.className);//這裡用JS因為class有特殊意義
+            console.log(elH1.title);
+            console.log(elH1.dataset.loki);
+
+            //透過 getAttribute() 方法來捕捉html代碼上的屬性
+            console.log(elH1.getAttribute('id'));
+            console.log(elH1.getAttribute('class'));
+            console.log(elH1.getAttribute('title'));
+            console.log(elH1.getAttribute('data-loki'));
+
+            //-----------------------------------
+            elH1.className = 'new-class';
+            elH1.setAttribute('class', 'new=attr');
+            //elh1.className ='';
+            elH1.setAttribute('class');
+
+            console.log(elH1.hasAttribute('class'));
+        }
+
+        //隨操作改變，後者不變，本來就不會隨user操作改變
+    
+        document.querySelector('input').setAttribute('value');
+        document.querySelector('input').value;
+
+        const div1 = document.querySelector('.container');
+        div.classList.add('red');
+        //   div.classList.remove('red');
+        div.classList.toggle('toggle-class');
+
+        div.classList.contains('red');//false不存在了
+        div.classList.contains('container');//true存在
+
+
+    </script>
+</body>
+
+</html>

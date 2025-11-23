@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+</head>
+
+<body>
+    <button onclick="clickEvent()">點我</button>
+    <hr>
+    <!--- div onclick="clickEventHandler()">點我div</div>
+     <div onmouseover="clickEventHandler()">滑鼠移入div</div>
+-->
+    <hr>
+    <input type="text" onclick="clickEventHandler('onclick事件')" onmouseover="clickEventHandler('omouseover事件')"
+           onchange="clickEventHandler('onchange', this.value)" oninput="clickEventHandler('oninput', this.value)">
+    <hr>
+    <form action="">帳號: <input type="text" name="username" onblur="checkUsername(this.value)">
+
+        <script>
+            let count = 0;
+            function clickEvent() {
+                if (count >= 2) {
+                    alert('按太多次了');
+                    return;
+                }
+                alert('不要點了');
+                count++;
+                console.log('點擊事件發生')
+            }
+            function clickEventHandler(str) {
+                console.log(`${str}事件發生`);
+            }
+
+        </script>
+</body>
+
+</html>

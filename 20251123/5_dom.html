@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>點我</button>
+    <form action="">
+        <div>
+            <label>帳號:</label>
+            <input type="text" name="username">
+            <small>密碼長度不足</small>
+        </div>
+        <div>
+        </div>
+        <label>密碼:</label>
+        <input type="password" name="password">
+    </form>
+
+        <script>
+            let count = 0;
+            const btn = document.querySelector('button');
+            function clickEvent() {
+                if (count >= 2) {
+                    alert('按太多次了');
+                    return;
+                }
+                alert('不要點了');
+                count++;
+                console.log('點擊事件發生');
+            }
+
+            btn.addEventListener('click',clickEvent);
+            btn.addEventListener('click', () => {
+                console.log('第二個事件處理器');
+            });
+            
+        </script>
+
+</body>
+
+</html>

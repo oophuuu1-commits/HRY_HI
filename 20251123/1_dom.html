@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoM地一次操作</title>
+    <style>
+        .text:nth-child(2) {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="myTitle">我的網頁</h1>
+    <h2>副標題</h2>
+    <div id="container">
+        <p class="text">第一段文字</p>
+        <p class="text">第二段文字</p>
+        <button id="btn">點擊我</button>
+    </div>
+    <hr>
+    <input type="text" name="myTitle" value="輸入框">
+    <script>
+        //1.用id取得單一元素
+        const elTile = document.getElementById('myTitle');
+        console.log(elTile);
+        //2.透過tagName取得htmlCollection元素組合
+        const elH1 = document.getElementsByTagName('h1')[0];
+        console.log(elH1);
+        //3.透過className取得htmlCollection元素組合
+        const elclass = document.getElementsByClassName('text');
+        console.log(elclass);
+        //透過元素屬性Name取得htmlCollection元素組合(較少用)
+        const elAttrName = document.getElementsByName('myTitle');
+        console.log(elAttrName);
+        //透過CSS選擇器取得單一元素
+        documen.querySelelector('#red');
+        documen.querySelelector('.text.red');
+        documen.querySelelector('.text:nth-child(2)');
+        //透過CSS選擇器取得多個元素組合
+        const elQueryAll = documen.querySelelectorAll('.text');
+
+        //------------------------------
+        console.clear();
+
+        const elH1 = document.getElementById('btn');
+        console.log('文字內容', btn.textContent);
+        elH1.innerHTML = ' 透過JS改變的標題 <span style="color:blue">主題字pan> ';
+
+        const.elContainer = document.getElementById('container');
+        //  elContainer.innerHTML = '<p>新的段落1</p>';
+        //  elContainer.textContent = '新的內容';
+        //  elContainer.innerHTML = elContainer.innerHTML + '<p>新的段落2</p>';
+        //   elContainer.innerHTML = `${elContainer.innerHTML}<p>新的段落3</p>`;
+
+
+        elContainer.innerHTML += '<p>新增的段落</p>';
+
+
+
+
+
+    </script>
+</body>
+
+</html>
